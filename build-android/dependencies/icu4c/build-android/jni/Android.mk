@@ -194,8 +194,10 @@ common_src_files := $(addprefix $(src_dir)/common/, $(common_src_files))
 i18n_src_files := $(addprefix $(src_dir)/i18n/, $(i18n_src_files))
 
 NDK_TOOLCHAIN_VERSION := clang
-LOCAL_CFLAGS := -DU_COMMON_IMPLEMENTATION -DU_I18N_IMPLEMENTATION -DU_COMBINED_IMPLEMENTATION
-LOCAL_CPPFLAGS := -frtti
+LOCAL_CFLAGS := -DU_COMMON_IMPLEMENTATION -DU_I18N_IMPLEMENTATION -DU_COMBINED_IMPLEMENTATION -fPIC
+LOCAL_CPPFLAGS := -frtti -fPIC
+LOCAL_CXXFLAGS := -frtti -fPIC
+
 LOCAL_C_INCLUDES := $(src_dir)/i18n $(src_dir)/common \
   $(ANDROID_NDK)/sources/cxx-stl/gnu-libstdc++/4.9/include \
   $(ANDROID_NDK)/sources/cxx-stl/gnu-libstdc++/4.9/libs/$(TARGET_ARCH_ABI)/include

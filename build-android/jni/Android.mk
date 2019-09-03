@@ -18,7 +18,9 @@ endif
 
 NDK_TOOLCHAIN_VERSION := clang
 LOCAL_MODULE := libxml2
-LOCAL_CFLAGS += -DLIBXML_THREAD_ENABLED=1
+LOCAL_CFLAGS += -DLIBXML_THREAD_ENABLED=1 -fPIC
+LOCAL_CXXFLAGS := -fPIC
+LOCAL_CPPFLAGS := -fPIC
 src_dir := $(LOCAL_PATH)/../..
 LOCAL_SRC_FILES := $(addprefix $(src_dir)/, $(src_files))
 LOCAL_C_INCLUDES += $(src_dir)/build-android/include $(src_dir)/include \
